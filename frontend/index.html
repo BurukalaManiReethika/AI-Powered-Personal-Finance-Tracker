@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Finance Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>💰 AI Finance Tracker</h1>
+      <p>Track expenses. Get AI-powered insights.</p>
+    </header>
+
+    <main>
+      <!-- Add Expense Form -->
+      <section class="card" id="form-section">
+        <h2>Add Expense</h2>
+        <div id="expense-form">
+          <input type="text" id="title" placeholder="Expense title (e.g. Dinner)" required />
+          <input type="number" id="amount" placeholder="Amount (₹)" min="0" required />
+          <select id="category">
+            <option>Food</option>
+            <option>Transport</option>
+            <option>Shopping</option>
+            <option>Health</option>
+            <option>Entertainment</option>
+            <option>Bills</option>
+            <option>Other</option>
+          </select>
+          <input type="text" id="note" placeholder="Note (optional)" />
+          <button onclick="addExpense()">Add Expense</button>
+        </div>
+      </section>
+
+      <!-- Chart -->
+      <section class="card">
+        <h2>Spending by Category</h2>
+        <canvas id="spendingChart" height="120"></canvas>
+      </section>
+
+      <!-- AI Insights -->
+      <section class="card" id="insights-section">
+        <h2>🤖 AI Insights</h2>
+        <button onclick="fetchInsights()" id="insights-btn">Get AI Insights</button>
+        <div id="insight-box" class="insight-box hidden"></div>
+      </section>
+
+      <!-- Expense List -->
+      <section class="card">
+        <h2>Recent Expenses</h2>
+        <ul id="expense-list"></ul>
+      </section>
+    </main>
+
+    <script src="components/Chart.js"></script>
+    <script src="components/ExpenseForm.js"></script>
+    <script src="components/InsightCard.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
